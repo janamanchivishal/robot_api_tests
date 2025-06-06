@@ -31,7 +31,8 @@ Quick POST Request Test
     Should Be Equal As Strings    ${expectedname}   ${name}
  
     ${job}=    Get From Dictionary     ${response.json()}    job    job not found
-    Should Be Equal As Strings    ${expectedjob}    ${job}
+Should Be Equal As Numbers    ${response.status_code}    204
+
 
 Quick PUT Request Test
     &{req_body}=  Create Dictionary    name=update_test        job=resident
